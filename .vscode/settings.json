@@ -1,0 +1,7 @@
+{
+    "circleci.filters.branchFilter": "allBranches",
+    "circleci.persistedProjectSelection": [
+        "circleci/B9rjHokBCPGEKWDwhe3VEA/HWvk6t1SnJ8CDm9nGwuLFL",
+        "gh/clauderleal/simpleapp"
+    ]
+}
