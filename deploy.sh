@@ -7,7 +7,9 @@ pm2 stop simpleapp
 # change directory into folder where application is downloaded
 cd simpleapp
 # install application dependencies
+npm cache clean -f
 npm install -g n
+sudo n stable
 npm install truffle
 echo $PRIVATE_KEY > privatekey.pem
 echo $SERVER > server.crt
