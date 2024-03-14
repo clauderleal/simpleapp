@@ -1,18 +1,22 @@
 #!/usr/bin/env bash
+# Install and update Node.js and npm
 sudo apt update && sudo apt install nodejs npm
-# install pm2 which ins a production process manager for node
+ 
+# Install pm2 - production process manager for Node.js
 sudo npm install -g pm2
-# stop any instance of our app running currently
-pm2 stop simpleapp
-# change directory into folder where application is downloaded
-cd simpleapp
-# install application dependencies
-#npm cache clean -f
+ 
+# Change directory to SimpleApplication
+cd simpleapp/
+ 
+# Install all dependencies
 npm install
-#npm install -g n
-#sudo n stable
-#npm install truffle
+ 
+# Save private key and the certificate
 echo $PRIVATE_KEY > privatekey.pem
 echo $SERVER > server.crt
-# start application
-pm2 start ./bin/www --name simpleapp
+ 
+# Kill all running processes
+pm2 kill
+ 
+# Start the app using pm2
+pm2 start ./bin/www --name simpleapp --env production
